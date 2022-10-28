@@ -24,6 +24,4 @@ http_archive(
 
 load("@rules_blender//:repo.bzl", "blender_repository")
 
-# NOTE: If you do not set the blender_repository name to "blender" you will have
-# to pass in your `blender_executable` for each `blender_render` rule
 blender_repository(name = "blender")
