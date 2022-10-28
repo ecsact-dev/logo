@@ -2,40 +2,42 @@ load("@rules_blender//:index.bzl", "blender_render")
 
 package(default_visibility = ["//visibility:public"])
 
-blender_render(
-    name = "ecsact-color",
-    blend_file = "logo.blend",
-    render_format = "PNG",
-    view_layers = ["color"],
-)
+_VARIATIONS = [
+    "color",
+    "all-color",
+    "white",
+    "black",
+]
 
-blender_render(
-    name = "ecsact-all-color",
-    blend_file = "logo.blend",
-    render_format = "PNG",
-    view_layers = ["all-color"],
-)
+_SIZES = [
+    44,
+    150,
+]
 
-blender_render(
-    name = "ecsact-white",
+[blender_render(
+    name = "ecsact-{}".format(variation),
     blend_file = "logo.blend",
     render_format = "PNG",
-    view_layers = ["white"],
-)
+    view_layers = [variation],
+) for variation in _VARIATIONS]
 
-blender_render(
-    name = "ecsact-black",
+[blender_render(
+    name = "ecsact-{}{}".format(variation, size),
     blend_file = "logo.blend",
+    python_script_args = [
+        "--res_x",
+        str(size),
+        "--res_y",
+        str(size),
+    ],
+    python_scripts = ["override_resolution.py"],
     render_format = "PNG",
-    view_layers = ["black"],
-)
+    view_layers = [variation],
+) for variation in _VARIATIONS for size in _SIZES]
 
 filegroup(
     name = "ecsact_logo",
-    srcs = [
-        ":ecsact-all-color",
-        ":ecsact-black",
-        ":ecsact-color",
-        ":ecsact-white",
-    ],
+    srcs =
+        [":ecsact-{}".format(variation) for variation in _VARIATIONS] +
+        [":ecsact-{}{}".format(variation, size) for variation in _VARIATIONS for size in _SIZES],
 )
