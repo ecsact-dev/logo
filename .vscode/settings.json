@@ -1,0 +1,24 @@
+{
+	"editor.formatOnSave": true,
+	"files.insertFinalNewline": true,
+	"files.eol": "\n",
+	"editor.insertSpaces": false,
+	"files.associations": {},
+	"C_Cpp.autocomplete": "default",
+	"C_Cpp.autoAddFileAssociations": false,
+	"editor.wordWrap": "wordWrapColumn",
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+	},
+	"[starlark]": {
+		"editor.defaultFormatter": "BazelBuild.vscode-bazel",
+		"editor.insertSpaces": true,
+		"editor.detectIndentation": false
+	}
+}

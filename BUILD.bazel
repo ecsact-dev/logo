@@ -1,0 +1,41 @@
+load("@rules_blender//:index.bzl", "blender_render")
+
+package(default_visibility = ["//visibility:public"])
+
+blender_render(
+    name = "ecsact-color",
+    blend_file = "logo.blend",
+    render_format = "PNG",
+    view_layers = ["color"],
+)
+
+blender_render(
+    name = "ecsact-all-color",
+    blend_file = "logo.blend",
+    render_format = "PNG",
+    view_layers = ["all-color"],
+)
+
+blender_render(
+    name = "ecsact-white",
+    blend_file = "logo.blend",
+    render_format = "PNG",
+    view_layers = ["white"],
+)
+
+blender_render(
+    name = "ecsact-black",
+    blend_file = "logo.blend",
+    render_format = "PNG",
+    view_layers = ["black"],
+)
+
+filegroup(
+    name = "ecsact_logo",
+    srcs = [
+        ":ecsact-all-color",
+        ":ecsact-black",
+        ":ecsact-color",
+        ":ecsact-white",
+    ],
+)
