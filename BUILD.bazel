@@ -7,11 +7,14 @@ _VARIATIONS = [
     "all-color",
     "white",
     "black",
+    "folder",
 ]
 
 _SIZES = [
     44,
+    128,
     150,
+    256,
 ]
 
 [blender_render(
