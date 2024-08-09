@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 0.1.7 - 2024-08-09
+#### Bug Fixes
+- only use git describe - (e252197) - Ezekiel Warren
+
+- - -
+
 ## 0.1.6 - 2024-08-09
 #### Bug Fixes
 - only use git describe - (cb27ccf) - Ezekiel Warren
