@@ -6,4 +6,4 @@ if "%GITHUB_REF%"=="" (
 	)
 )
 
-echo GIT_RELEASE_TAG %GITHUB_REF%
+echo STABLE_GIT_RELEASE_TAG %GITHUB_REF%
