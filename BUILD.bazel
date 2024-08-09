@@ -1,4 +1,8 @@
+load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
+load("@bazel_skylib//rules:write_file.bzl", "write_file")
+load("@bzlws//rules:bzlws_copy.bzl", "bzlws_copy")
 load("@rules_blender//:index.bzl", "blender_render")
+load("@rules_pkg//pkg:zip.bzl", "pkg_zip")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -43,4 +47,31 @@ filegroup(
     srcs =
         [":ecsact-{}".format(variation) for variation in _VARIATIONS] +
         [":ecsact-{}{}".format(variation, size) for variation in _VARIATIONS for size in _SIZES],
+)
+
+write_file(
+    name = "public_build_file",
+    out = "BUILD",
+    content = [
+        "package(default_visibility = [\"//visibility:public\"])",
+        "exports_files(glob([\"*\"]))",
+    ],
+)
+
+pkg_zip(
+    name = "ecsact_logo_archive",
+    out = "ecsact_logo.zip",
+    srcs = [
+        "logo.svg",
+        "MODULE.bazel",
+        ":ecsact_logo",
+        ":public_build_file",
+    ],
+)
+
+bzlws_copy(
+    name = "copy_dist_archive",
+    srcs = [":ecsact_logo_archive"],
+    out = "dist/{BASENAME}-{GIT_RELEASE_TAG}.{EXTNAME}",
+    force = True,
 )

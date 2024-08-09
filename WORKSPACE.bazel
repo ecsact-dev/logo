@@ -1,27 +1,12 @@
-workspace(name = "ecsact_logo")
-
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
-    name = "bazel_skylib",
-    sha256 = "74d544d96f4a5bb630d465ca8bbcfe231e3594e5aae57e1edbf17a6eb3ca2506",
-    urls = [
-        "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/releases/download/1.3.0/bazel-skylib-1.3.0.tar.gz",
-        "https://github.com/bazelbuild/bazel-skylib/releases/download/1.3.0/bazel-skylib-1.3.0.tar.gz",
-    ],
-)
-
-load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
-
-bazel_skylib_workspace()
-
-http_archive(
     name = "rules_blender",
-    sha256 = "ac8dd6fb84f058beb774529baad8d27249415ee99ff9c7b3dda004722f055dcb",
-    strip_prefix = "rules_blender-580815c406f5dac682b2816314b5a2f7bbdb2ce3",
-    urls = ["https://github.com/zaucy/rules_blender/archive/580815c406f5dac682b2816314b5a2f7bbdb2ce3.zip"],
+    integrity = "sha256-HKH9Y2wiL/EkVEFcaCZHT8ACW8SHX24UZ8EHEhwcI8w=",
+    strip_prefix = "rules_blender-e5f5b1ef894fe4da7b3cbf85ca857b6fd3bdffba",
+    urls = ["https://github.com/zaucy/rules_blender/archive/e5f5b1ef894fe4da7b3cbf85ca857b6fd3bdffba.zip"],
 )
 
 load("@rules_blender//:repo.bzl", "blender_repository")
 
-blender_repository(name = "blender")
+blender_repository(name = "blender", blender_version = "system", only_system_installed_blender = True)
