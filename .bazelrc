@@ -5,9 +5,6 @@ build --incompatible_strict_action_env
 build --enable_runfiles
 build --experimental_worker_cancellation
 
-build:windows --workspace_status_command=bazel/tools/wsc.cmd
-build:linux --workspace_status_command=bazel/tools/wsc.sh
-
 build:windows --platforms=//bazel/platforms:windows
 
 build:linux --platforms=//bazel/platforms:linux

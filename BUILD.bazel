@@ -72,6 +72,6 @@ pkg_zip(
 bzlws_copy(
     name = "copy_dist_archive",
     srcs = [":ecsact_logo_archive"],
-    out = "dist/{BASENAME}[:-4]-{STABLE_GIT_RELEASE_TAG}.tar.gz",
+    out = "dist/{FILENAME}",
     force = True,
 )
