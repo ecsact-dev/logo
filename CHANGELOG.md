@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 0.1.5 - 2024-08-09
+#### Bug Fixes
+- do copy after pushing tag - (e2fcb68) - Ezekiel Warren
+
+- - -
+
 ## 0.1.4 - 2024-08-09
 #### Bug Fixes
 - incorrect cog clean cmd - (406b78c) - Ezekiel Warren
