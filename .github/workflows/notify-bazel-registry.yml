@@ -20,5 +20,5 @@ jobs:
             {
               "repo": "ecsact_logo",
               "tag_name": "${{ github.event.release.tag_name }}",
-              "archive": "${{ format('https://github.com/ecsact-dev/logo/releases/download/{0}/ecsact_logo-{0}.tgz', github.event.release.tag_name) }}"
+              "archive": "${{ format('https://github.com/ecsact-dev/logo/releases/download/{0}/ecsact_logo-{0}.tar.gz', github.event.release.tag_name) }}"
             }
