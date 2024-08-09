@@ -1,11 +1,12 @@
 pre_bump_hooks = [
     "buildozer 'set version {{version}}' //MODULE.bazel:%module",
     "bazel mod tidy",
-    "git clean dist -f",
-    "bazel run //:copy_dist_archive",
+    "bazel build //:copy_dist_archive",
 ]
 
 post_bump_hooks = [
+    "git clean dist -f",
+    "bazel run //:copy_dist_archive",
     "git push",
     "git push origin {{version}}",
     "gh release create {{version}} ./dist/*.zip --generate-notes --latest -t {{version}} --verify-tag",
