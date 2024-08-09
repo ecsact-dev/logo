@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 0.1.3 - 2024-08-09
+#### Bug Fixes
+- incorrect extension in gh release action - (eca1de2) - Ezekiel Warren
+
+- - -
+
 ## 0.1.2 - 2024-08-09
 #### Bug Fixes
 - rename bad gh workflows folder - (cb9b170) - Ezekiel Warren
