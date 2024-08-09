@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file. See [conven
 
 - - -
 ## 0.1.1 - 2024-08-09
+#### Bug Fixes
+- use .tar.gz for release archive - (10a6bf0) - Ezekiel Warren
+#### Miscellaneous Chores
+- **(version)** 0.1.1 - (bd9aefd) - Ezekiel Warren
+- undo version change - (99c24b4) - Ezekiel Warren
+- add release gh action - (c763251) - Ezekiel Warren
+- fix up cog.toml - (863e0ca) - Ezekiel Warren
+- automatically add zip to release - (c68a892) - Ezekiel Warren
+
+- - -
+
+## 0.1.1 - 2024-08-09
 #### Miscellaneous Chores
 - add release gh action - (c763251) - Ezekiel Warren
 - fix up cog.toml - (863e0ca) - Ezekiel Warren
