@@ -5,9 +5,9 @@ pre_bump_hooks = [
 ]
 
 post_bump_hooks = [
-    "git clean dist -fdx",
-    "bazel run //:copy_dist_archive",
     "git push",
     "git push origin {{version}}",
+    "git clean dist -fdx",
+    "bazel run //:copy_dist_archive",
     "gh release create {{version}} ./dist/*.tar.gz --generate-notes --latest -t {{version}} --verify-tag",
 ]
