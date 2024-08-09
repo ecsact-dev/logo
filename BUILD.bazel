@@ -60,7 +60,7 @@ write_file(
 
 pkg_zip(
     name = "ecsact_logo_archive",
-    out = "ecsact_logo.zip",
+    out = "ecsact_logo.tgz",
     srcs = [
         "logo.svg",
         "MODULE.bazel",

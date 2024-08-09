@@ -1,0 +1,24 @@
+name: Notify Bazel Registry
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  notify-bazel-registry:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Notify Bazel Registry
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.ECSACT_BAZEL_REGISTRY_TOKEN }}
+          repository: ecsact-dev/bazel_registry
+          event-type: notify-bzlmod-archive
+          client-payload: >-
+            {
+              "repo": "ecsact_logo",
+              "tag_name": "${{ github.event.release.tag_name }}",
+              "archive": "${{ format('https://github.com/ecsact-dev/logo/releases/download/{0}/ecsact_logo-{0}.tgz', github.event.release.tag_name) }}"
+            }
