@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 0.1.8 - 2024-08-09
+#### Bug Fixes
+- no stamping because it doesn't work - (b434b69) - Ezekiel Warren
+
+- - -
+
 ## 0.1.7 - 2024-08-09
 #### Bug Fixes
 - only use git describe - (e252197) - Ezekiel Warren
