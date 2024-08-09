@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 0.1.11 - 2024-08-09
+#### Bug Fixes
+- properly package as .tar.gz - (093a2a6) - Ezekiel Warren
+
+- - -
+
 ## 0.1.10 - 2024-08-09
 #### Bug Fixes
 - simplify more - (23b5a93) - Ezekiel Warren
