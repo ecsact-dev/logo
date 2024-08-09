@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 0.1.1 - 2024-08-09
+#### Miscellaneous Chores
+- add release gh action - (c763251) - Ezekiel Warren
+- fix up cog.toml - (863e0ca) - Ezekiel Warren
+- automatically add zip to release - (c68a892) - Ezekiel Warren
+
+- - -
+
 ## 0.1.0 - 2024-08-09
 #### Features
 - vectorized logo - (f2c8a48) - Ezekiel Warren
